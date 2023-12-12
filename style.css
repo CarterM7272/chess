@@ -1,0 +1,37 @@
+body {
+  margin: 0px;
+  background-color: rgb(23, 22, 22);
+}
+
+#startBtn {
+  width: 100px;
+  height: 40px;
+  background-color: aquamarine;
+  color: black;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+#startBtn:hover {
+  width: 115px;
+  background-color: aqua;
+}
+
+.selected {
+  background-color: gold;
+}
+
+.capture {
+  background-color: azure;
+}
+
+.move {
+  width: 10px;
+  background-color: red;
+  height: 10px;
+  border-radius: 5px;
+}
+
+#pClock {
+  color: white;
+}
