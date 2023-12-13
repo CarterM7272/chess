@@ -54,7 +54,14 @@ const startGame = () => {
       endGame();
     }
   }, 1000);
-
 }
 
 
+function allowDrop(ev) {
+  ev.preventDefault;
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData('text', ev.target.id)
+  ev.target.appendChild(document.getElementById(data))
+}
