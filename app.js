@@ -1,23 +1,22 @@
-let pClock = document.getElementById('pClock')
+let p1Clock = document.getElementById('p1Clock')
+let p2Clock = document.getElementById('p2Clock')
 const startBtn = document.getElementById('startBtn')
-const endTimer = document.getElementById('endBtn')
+const stopTimer = document.getElementById('endBtn')
 const chessboard = document.querySelector("#chessboard")
 
 
 const startPieces = [
-  rook, knight, bishop, king, queen, bishop, knight, rook,
-  pawn, pawn, pawn, pawn, pawn, pawn, pawn, pawn, 
-  '', '', '', '', '', '', '', '',
-  '', '', '', '', '', '', '', '',
-  '', '', '', '', '', '', '', '',
-  '', '', '', '', '', '', '', '',
-  pawn, pawn, pawn, pawn, pawn, pawn, pawn, pawn, 
-  rook, knight, bishop, king, queen, bishop, knight, rook
+  R, N, B, K, Q, B, N, R,
+  P, P, P, P, P, P, P, P, 
+  '','','','','','','','',
+  '','','','','','','','',
+  '','','','','','','','',
+  '','','','','','','','',
+  p, p, p, p, p, p, p, p, 
+  r, n, b, k, q, b, n, r
 ]
 
-
 // Board creation, dynamically adjusted the classes per square
-
 function createBoard() {
   startPieces.forEach((startPiece, i) => {
     const square = document.createElement('div')
@@ -35,9 +34,7 @@ function createBoard() {
 }
 
 createBoard();
-
 // Set timer for when the start game button is clicked
-
 const startTimer = (event) => {
   startGame()
   event.preventDefault()
@@ -46,10 +43,16 @@ const startTimer = (event) => {
 startBtn.addEventListener('click', startTimer); 
 
 const startGame = () => {
-  let count = 1000
+  let date = new Date()
+  let minutes = date.minutes
+  let seconds = date.seconds
+
+
+  let count = minutes + ':' + seconds
   
   const time = setInterval(() => {
-    pClock.innerHTML = count;
+    p1Clock.innerHTML = count;
+    p2Clock.innerHTML = count;
     count--;
 
     console.log(count);
@@ -61,18 +64,14 @@ const startGame = () => {
   }, 1000);
 }
 
-
-function allowDrop(ev) {
-  ev.preventDefault;
+function dragEnter(e) {
 }
 
-function drag(ev) {
-  ev.dataTransfer.setData('text', ev.target.id)
-  ev.target.appendChild(document.getElementById(data))
+function dragOver(e) {
 }
 
-function isDropAllowed(draggedElement, dropTarget) {
-  // Implement custom logic to check if drop is allowed
-  // For example, you might want to check the type of elements being dropped
-  return true;
+function dragLeave(e) {
+}
+
+function drop(e) {
 }

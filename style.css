@@ -1,5 +1,6 @@
 body {
-  background-color: white;
+  background-color: rgba(57, 114, 45, 0.567);
+  margin: 0;
 }
 
 #chessboard {
@@ -13,6 +14,7 @@ body {
   margin: 40px;
 }
 
+
 #startBtn {
   width: 100px;
   height: 40px;
@@ -23,9 +25,13 @@ body {
   border: none;
 }
 
-#startBtn:hover {
-  width: 105px;
-  background-color: aqua;
+#endBtn {
+  background-color: red;
+  border: none;
+  width: 100px;
+  height: 40px;
+  border-radius: 15px;
+  cursor: pointer;
 }
 
 .selected {
@@ -43,32 +49,19 @@ body {
   border-radius: 5px;
 }
 
-#pClock {
+.clock {
   color: black;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: medium;
+  font-family: sans-serif;
 }
 
 .piece {
   width: 40px;
   height: 40px;
-  color: black;
   cursor: pointer;
 }
 
-
-#endBtn {
-  background-color: red;
-  border: none;
-  width: 100px;
-  height: 40px;
-  border-radius: 15px;
-  cursor: pointer;
-}
-
-#endBtn:hover {
-  width: 115px;
-  background-color: rgba(255, 0, 0, 0.63);
+.piece:hover{
+  height: 50px;
 }
 
 .square {
@@ -96,4 +89,15 @@ body {
 
 .selected {
   background-color: gold;
+}
+
+.draggable {
+  opacity: 5%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
